@@ -14,7 +14,7 @@ The sections below will briefly explain the steps and results.
 
 ### Data Collection
 We scraped data from Amazon's website by adopting snowball method. The process is summarized in the figure below.
-![Alt text](https://drive.google.com/open?id=14eLDOHy9mZBKCqCCmR1N80FXixFBxfrT)
+![Alt text](https://photos-5.dropbox.com/t/2/AACPJ1nxubg8w9-CmXK5CMzuK3hsS0f_pS2Ui0sOesL8Ig/12/72523552/png/32x32/3/1518584400/0/2/Screen%20Shot%202018-02-13%20at%2011.58.53%20PM.png/ENK0pzgYy80BIAcoBw/0bsVOBBPanWar3Fu-c4WG5fgga7fNUniiB5ltdTEKqE?dl=0&preserve_transparency=1&size=800x600&size_mode=3)
 
 Two additional attributes were generated through data aggregation and python module:
 - most_rev: highest number of reviews made in a day. This help us to identify if user made a very high number of reviews in the same day. 
@@ -42,17 +42,17 @@ Columns:
 Find the code [here](https://github.com/Maytudboon/MSING055)
 
 The networks below show an observable difference between network of suspected fake reviews (left) and normal reviews (right).The nodes are profiles and they are connected to each other if they have reviewed more than 2 products in common. The product on the left was chosen through manual inspection to be suspicious compared to similar products.
-![Alt text](https://drive.google.com/open?id=1xagWpKUsaVxyIeyYmhZGCgjioDlTo4K6)
+![Alt text](https://photos-2.dropbox.com/t/2/AAAs7dSeXtuO4jLQDIUst4myD2q3qZvlWVwCsAse_7OOQQ/12/72523552/png/32x32/3/1518584400/0/2/Screen%20Shot%202018-02-13%20at%2011.57.29%20PM.png/ENK0pzgYy80BIAcoBw/lGZYC35bw8EGxT4Xti-g5viyUvQl7rFMzhHPqH2_Dgs?dl=0&preserve_transparency=1&size=800x600&size_mode=3)
 
 ### Clustering
 The dataset that has been collected is unlabeled. Therefore we must do through the unsupervised learning path. While the network visualization is used to identify sets of suspicious reviewers, clustering is useful to understand the common characteristics of fake reviews and detect anomaly. The model divided the reviews into five clusters using simple K-Means method with 5 clusters. The attributes included on the models are ratings, verified, most_rev, helpful, and review_sentiment. The cluster model was developed using Weka. 
 
 The charasteristics of each cluster is quite distinguishable, as described below.
-![Alt text](https://drive.google.com/open?id=1Dryn9D6zpE5IS64LkXyn6ca36xthT2Ho)
+![Alt text](https://photos-3.dropbox.com/t/2/AAAHmd2c_cwZ7H05L_NHu9OWOPCZdd6IXXBoql0SjWd6yw/12/72523552/png/32x32/3/1518584400/0/2/Screen%20Shot%202018-02-13%20at%2011.57.16%20PM.png/ENK0pzgYy80BIAcoBw/uI_t134_74GTbER2sBdRXuI3SFRr3_CgrdFySm1KFBw?dl=0&preserve_transparency=1&size=800x600&size_mode=3)
 
 ### Matching The Results From Network Analysis and Clustering
 Next, we map the suspect list and their reviews into the clusters. We analyzed the review characterstics of our suspect list. Based on the characteristics, we cannot fit their reviews into one cluster. However, 77.35% of the reviews made by these users belong to Cluster1 and Cluster3, as can be seen on the chart below.
-![Alt text](https://drive.google.com/open?id=1GFxIb1gxTINMQ2nGdZxRLg6o7C-Y2TGr)
+![Alt text](https://photos-5.dropbox.com/t/2/AAA0k1ARSJBneY0Yk0MNQFNOO7uhSFIvb5_x5pa-go5Uiw/12/72523552/png/32x32/3/1518584400/0/2/Screen%20Shot%202018-02-13%20at%2011.57.03%20PM.png/ENK0pzgYy80BIAcoBw/jFT9TFYz3TrYWy-TGDyv_OypRigLJgBZFUFNfd3RQF4?dl=0&preserve_transparency=1&size=800x600&size_mode=3)
 
 
 
